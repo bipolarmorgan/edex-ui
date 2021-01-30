@@ -11,9 +11,13 @@ function matchIcon(filename) {
     if (/\.(app|xcodeproj|xcworkspace)$/i.test(filename)) { return "appstore"; }
     if (/\.artx$/i.test(filename)) { return "arttext"; }
     if (/^\.atom(-ci)?$/.test(filename)) { return "atom"; }
+    if (/[^\s.]\.(c?action|definition|workflow)$/i.test(filename)) { return "automator"; }
     if (/^\.azure-pipelines$/i.test(filename)) { return "azurepipelines"; }
     if (/^\.bzr$/.test(filename)) { return "bazaar"; }
+    if (/^\.bitcoin$/i.test(filename)) { return "bitcoin"; }
+    if (/^bloc$/i.test(filename)) { return "bloc"; }
     if (/^bower[-_]components$/.test(filename)) { return "bower"; }
+    if (/^\.buildkite$/.test(filename)) { return "buildkite"; }
     if (/^\.cabal$/i.test(filename)) { return "cabal"; }
     if (/\.chef$/.test(filename)) { return "chef"; }
     if (/^\.circleci$/.test(filename)) { return "circleci"; }
@@ -26,15 +30,16 @@ function matchIcon(filename) {
     if (/^\.devcontainer$/i.test(filename)) { return "devcontainer"; }
     if (/^\.docker$/.test(filename)) { return "docker"; }
     if (/^(Dropbox|\.dropbox\.cache)$/.test(filename)) { return "dropbox"; }
+    if (/^\.dub$/.test(filename)) { return "dub"; }
     if (/^\.dvc$/.test(filename)) { return "dvc"; }
     if (/^\.emacs\.d$/.test(filename)) { return "emacs"; }
     if (/^\.expo(-shared)?$/i.test(filename)) { return "expo"; }
     if (/^\.fossil-settings$/i.test(filename)) { return "fossil"; }
-    if (/\.(appex|framework|ideplugin)$/i.test(filename)) { return "dylib"; }
     if (/\.git$/.test(filename)) { return "git"; }
     if (/^\.github$/.test(filename)) { return "github"; }
     if (/^\.gitlab$/.test(filename)) { return "gitlab"; }
     if (/^\.nyc[-_]output$/.test(filename)) { return "istanbul"; }
+    if (/.\.(appex|bundle|ccl|component|framework|framework|ideplugin|kext|mdimporter|osax|(osirix)?plugin|qlgenerator)$/i.test(filename)) { return "dylib"; }
     if (/^\.meteor$/.test(filename)) { return "meteor"; }
     if (/^\.hg$/.test(filename)) { return "hg"; }
     if (/^node_modules$/.test(filename)) { return "node"; }
@@ -47,6 +52,7 @@ function matchIcon(filename) {
     if (/\.vagrant\.d$/i.test(filename)) { return "vagrant"; }
     if (/^\.vim$/i.test(filename)) { return "vim"; }
     if (/^\.vscode$/i.test(filename)) { return "vs"; }
+    if (/^\.wine$/i.test(filename)) { return "wine"; }
     if (/^\.yarn$/i.test(filename)) { return "yarn"; }
     if (/\.bsl$/i.test(filename)) { return "1c"; }
     if (/\.sdbl$/i.test(filename)) { return "1c"; }
@@ -206,11 +212,11 @@ function matchIcon(filename) {
     if (/\.au3$/i.test(filename)) { return "autoit"; }
     if (/^(AutoIt3|AutoItScript|au3)$/i.test(filename)) { return "autoit"; }
     if (/\.av(cs|sc|dl)$/i.test(filename)) { return "avro"; }
-    if (/\.awk$/i.test(filename)) { return "terminal"; }
-    if (/\.gawk$/i.test(filename)) { return "terminal"; }
-    if (/\.mawk$/i.test(filename)) { return "terminal"; }
-    if (/\.nawk$/i.test(filename)) { return "terminal"; }
-    if (/\.auk$/i.test(filename)) { return "terminal"; }
+    if (/\.awk$/i.test(filename)) { return "awk"; }
+    if (/\.gawk$/i.test(filename)) { return "awk"; }
+    if (/\.mawk$/i.test(filename)) { return "awk"; }
+    if (/\.nawk$/i.test(filename)) { return "awk"; }
+    if (/\.auk$/i.test(filename)) { return "awk"; }
     if (/^azure-pipelines\.ya?ml$/i.test(filename)) { return "azurepipelines"; }
     if (/\.(babelrc|babelrc\.[cm]?js|languagebabel|babel)$/i.test(filename)) { return "babel"; }
     if (/babel(\.[\w\-]+)*\.conf(ig)?\./i.test(filename)) { return "babel"; }
@@ -223,6 +229,7 @@ function matchIcon(filename) {
     if (/^behat(\.[^.]+)*\.ya?ml$/i.test(filename)) { return "behat"; }
     if (/\.bemjson(\.[cm]?js)?$/i.test(filename)) { return "bem"; }
     if (/\.cbx$/i.test(filename)) { return "bibtex"; }
+    if (/\.bbl$/i.test(filename)) { return "bibtex"; }
     if (/\.bbx$/i.test(filename)) { return "bibtex"; }
     if (/\.bib(tex)?$/i.test(filename)) { return "bibtex"; }
     if (/\.bst$/i.test(filename)) { return "bibtex"; }
@@ -241,20 +248,25 @@ function matchIcon(filename) {
     if (/\.puff$/i.test(filename)) { return "binary"; }
     if (/\.swp$/i.test(filename)) { return "binary"; }
     if (/^\.rnd$/i.test(filename)) { return "binary"; }
+    if (/^(dev-)?requirements\.txt$/.test(filename)) { return "binder"; }
     if (/^\.bintray\.json$/i.test(filename)) { return "bintray"; }
     if (/\.bison$/i.test(filename)) { return "bison"; }
     if (/\.y$/i.test(filename)) { return "bison"; }
     if (/\.yacc$/i.test(filename)) { return "bison"; }
     if (/\.yy$/i.test(filename)) { return "bison"; }
     if (/^bitbucket-pipelines\.ya?ml$/i.test(filename)) { return "bitbucket"; }
+    if (/^bitcoin\.conf$/i.test(filename)) { return "bitcoin"; }
     if (/\.bithoundrc$/i.test(filename)) { return "bithound"; }
     if (/\.blend$/i.test(filename)) { return "blender"; }
     if (/\.blend\d+$/i.test(filename)) { return "blender"; }
     if (/\.bphys$/i.test(filename)) { return "blender"; }
+    if (/\.bb$/i.test(filename)) { return "blitzbasic"; }
+    if (/\.decls$/i.test(filename)) { return "blitzbasic"; }
     if (/\.bsv$/i.test(filename)) { return "bluespec"; }
     if (/\.boo$/i.test(filename)) { return "boo"; }
     if (/\.boot$/i.test(filename)) { return "boot"; }
     if (/^Makefile\.boot$/i.test(filename)) { return "boot"; }
+    if (/^bors\.toml$/i.test(filename)) { return "bors"; }
     if (/^(custom\.)?bootstrap\S*\.js$/i.test(filename)) { return "bootstrap"; }
     if (/^(custom\.)?bootstrap\S*\.cjs$/i.test(filename)) { return "bootstrap"; }
     if (/^(custom\.)?bootstrap\S*\.mjs$/i.test(filename)) { return "bootstrap"; }
@@ -279,6 +291,7 @@ function matchIcon(filename) {
     if (/^BUCK$/.test(filename)) { return "buck"; }
     if (/^Gemfile(\.lock)?$/i.test(filename)) { return "bundler"; }
     if (/\.gemfile$/i.test(filename)) { return "bundler"; }
+    if (/gemfile/i.test(filename)) { return "bundler"; }
     if (/\.dm$/i.test(filename)) { return "byond"; }
     if (/^(DM|Dream\s*Maker(\s*Script)?)$/i.test(filename)) { return "byond"; }
     if (/\.c$/i.test(filename)) { return "c"; }
@@ -311,6 +324,7 @@ function matchIcon(filename) {
     if (/\.cake$/i.test(filename)) { return "cake"; }
     if (/^Cakefile$/.test(filename)) { return "cakefile"; }
     if (/\.ctp$/i.test(filename)) { return "cakephp"; }
+    if (/\.calva-repl$/i.test(filename)) { return "calva"; }
     if (/^Cartfile(\.|$)/.test(filename)) { return "carthage"; }
     if (/\.ceylon$/i.test(filename)) { return "ceylon"; }
     if (/^chai\.([jt]sx?|es6?|coffee)$/i.test(filename)) { return "chai"; }
@@ -372,7 +386,7 @@ function matchIcon(filename) {
     if (/\.podspec$/i.test(filename)) { return "cocoapods"; }
     if (/\.codacy\.ya?ml$/i.test(filename)) { return "codacy"; }
     if (/\.codeclimate\.yml$/i.test(filename)) { return "cc"; }
-    if (/^codecov\.ya?ml$/i.test(filename)) { return "codecov"; }
+    if (/^\.?codecov\.ya?ml$/i.test(filename)) { return "codecov"; }
     if (/(^config)?\.codekit\d*$/i.test(filename)) { return "codekit"; }
     if (/^codemeta\.json(ld)?$/i.test(filename)) { return "codemeta"; }
     if (/^codeship-[\w.-]+\.ya?ml$/i.test(filename)) { return "codeship"; }
@@ -380,6 +394,7 @@ function matchIcon(filename) {
     if (/\.cjsx$/i.test(filename)) { return "coffee"; }
     if (/\.coffee\.ecr$/i.test(filename)) { return "coffee"; }
     if (/\.coffee\.erb$/i.test(filename)) { return "coffee"; }
+    if (/\.coffee\.md$/i.test(filename)) { return "coffee"; }
     if (/\.litcoffee$/i.test(filename)) { return "coffee"; }
     if (/\.iced$/i.test(filename)) { return "coffee"; }
     if (/\.cfc$/i.test(filename)) { return "cf"; }
@@ -416,18 +431,23 @@ function matchIcon(filename) {
     if (/\.ear$/i.test(filename)) { return "zip"; }
     if (/\.egg$/i.test(filename)) { return "zip"; }
     if (/\.sit$/i.test(filename)) { return "zip"; }
+    if (/\.hak$/i.test(filename)) { return "zip"; }
     if (/\.cdf$/i.test(filename)) { return "cdf"; }
     if (/^(conanfile\.(txt|py)|conan\.conf)$/i.test(filename)) { return "conan"; }
     if (/^\.?condarc$/i.test(filename)) { return "conda"; }
     if (/\.(ini|desktop|directory|cfg|co?nf|prefs)$/i.test(filename)) { return "config"; }
     if (/\.properties$/i.test(filename)) { return "config"; }
     if (/\.ld$/i.test(filename)) { return "config"; }
+    if (/\.ldif$/i.test(filename)) { return "config"; }
     if (/\.lds$/i.test(filename)) { return "config"; }
+    if (/\.mcf$/i.test(filename)) { return "config"; }
     if (/\.opts$/i.test(filename)) { return "config"; }
+    if (/^pf\.os$/i.test(filename)) { return "config"; }
+    if (/\.sdl(ang)?$/i.test(filename)) { return "config"; }
     if (/^mimeapps\.list$/i.test(filename)) { return "config"; }
     if (/(\.|^)terminal(rc)?$/i.test(filename)) { return "config"; }
     if (/^ld\.script$/i.test(filename)) { return "config"; }
-    if (/^shells$/i.test(filename)) { return "config"; }
+    if (/^(shells|rpc)$/i.test(filename)) { return "config"; }
     if (/^\.?XCompose$/.test(filename)) { return "config"; }
     if (/^buildozer\.spec$/i.test(filename)) { return "config"; }
     if (/^settings\.bsp$/i.test(filename)) { return "config"; }
@@ -445,13 +465,17 @@ function matchIcon(filename) {
     if (/^go\.mod$/i.test(filename)) { return "config-go"; }
     if (/^go\.sum$/i.test(filename)) { return "config-go"; }
     if (/^haskellconfig\.json$/i.test(filename)) { return "config-hs"; }
-    if (/^(jsconfig(\..+)?|\.?eshost(-config)?)\.json$/i.test(filename)) { return "config-js"; }
+    if (/\.js(beautify|cs|hint)rc$|^(jsconfig(\..+)?|\.?eshost(-config)?)\.json$/i.test(filename)) { return "config-js"; }
     if (/^perl[56]?-?config\.json$/i.test(filename)) { return "config-perl"; }
     if (/^python-?config\.json$/i.test(filename)) { return "config-python"; }
     if (/^pyproject\.toml$/i.test(filename)) { return "config-python"; }
     if (/^poetry\.lock$/i.test(filename)) { return "config-python"; }
+    if (/^\.coveragerc$/i.test(filename)) { return "config-python"; }
+    if (/^MANIFEST\.in$/i.test(filename)) { return "config-python"; }
+    if (/\.python-version$/i.test(filename)) { return "config-python"; }
     if (/^jsxconfig\.json$/i.test(filename)) { return "config-react"; }
-    if (/^rubyconfig\.json$/i.test(filename)) { return "config-ruby"; }
+    if (/^rubyconfig\.json$|\.(autotest|cross_rubies|gemtest|hoerc|kick|simplecov|yardopts)$/i.test(filename)) { return "config-ruby"; }
+    if (/^\.yardopts/i.test(filename)) { return "config-ruby"; }
     if (/^rustconfig\.json$/i.test(filename)) { return "config-rust"; }
     if (/^rust-toolchain$/i.test(filename)) { return "config-rust"; }
     if (/^tsconfig(\..+)?\.json$/i.test(filename)) { return "config-ts"; }
@@ -523,6 +547,7 @@ function matchIcon(filename) {
     if (/\.sy$/i.test(filename)) { return "database"; }
     if (/\.syntax$/i.test(filename)) { return "database"; }
     if (/\.webmanifest$/i.test(filename)) { return "database"; }
+    if (/\.2da$/i.test(filename)) { return "database"; }
     if (/\.(od|onlydata)$/i.test(filename)) { return "database"; }
     if (/\.dbi$/i.test(filename)) { return "database"; }
     if (/\.snip(pets?)?$/i.test(filename)) { return "database"; }
@@ -531,6 +556,7 @@ function matchIcon(filename) {
     if (/(^|\.)encodings\.dir$/i.test(filename)) { return "database"; }
     if (/^pkginfo$/i.test(filename)) { return "database"; }
     if (/^term(cap|info)/i.test(filename)) { return "database"; }
+    if (/^eign$/.test(filename)) { return "database"; }
     if (/^(birthtoken|flowers)$/.test(filename)) { return "database"; }
     if (/(\\|\/)share(?:\1misc)?\1(?:ascii|trace\.codes)$/.test(filename)) { return "database"; }
     if (/^(mime\.types|fstab)$/i.test(filename)) { return "database"; }
@@ -540,7 +566,8 @@ function matchIcon(filename) {
     if (/^(magic\.mgc|figmagic)$/i.test(filename)) { return "database"; }
     if (/[\/\\](?:magic[\/\\]Magdir|file[\/\\]magic)[\/\\][-.\w]+$/i.test(filename)) { return "database"; }
     if (/(\\|\/)dev[-\w]+\1(?:[^\\\/]+\1)*(?!DESC|NOTES)(?:[A-Z][-A-Z]*)(?:\.in)?$/.test(filename)) { return "database"; }
-    if (/\/tab\.(37|450-12|450|lp|think)$|\/dev[-\w]+\/(APL\.bug|[A-Z][-A-Za-z0-9]*)(\.fd)?$/i.test(filename)) { return "database"; }
+    if (/term\/O?tab\.[^\/]+$|\/dev[-\w]+\/(APL\.bug|[A-Z][-A-Za-z0-9]*)(\.fd)?$/i.test(filename)) { return "database"; }
+    if (/(^|\/)n?term\/O?tab\.(X|lpr)$/i.test(filename)) { return "database"; }
     if (/\.ssh[\/\\](authorized_keys|known_hosts)$/.test(filename)) { return "database"; }
     if (/^\.icondb\.js$/.test(filename)) { return "database"; }
     if (/\.git[\/\\](.*[\/\\])?(HEAD|ORIG_HEAD|packed-refs|logs[\/\\](.+[\/\\])?[^\/\\]+)$/.test(filename)) { return "database"; }
@@ -583,6 +610,7 @@ function matchIcon(filename) {
     if (/^dragula(\.min)?\.([cm]?js|css)$/i.test(filename)) { return "dragula"; }
     if (/^\.drawio($|\.)|\.d(raw)?io(\.png|\.svg)?$/i.test(filename)) { return "drawio"; }
     if (/\.drone\.ya?ml$/i.test(filename)) { return "drone"; }
+    if (/^dub(\.selections)?\.(json|sdl)$/i.test(filename)) { return "dub"; }
     if (/\.dyalog$/i.test(filename)) { return "dyalog"; }
     if (/\.dyapp$/i.test(filename)) { return "dyalog"; }
     if (/\.mipage$/i.test(filename)) { return "dyalog"; }
@@ -647,6 +675,8 @@ function matchIcon(filename) {
     if (/\.ffn$/i.test(filename)) { return "dna"; }
     if (/\.frn$/i.test(filename)) { return "dna"; }
     if (/\.sam$/i.test(filename)) { return "dna"; }
+    if (/\.fql$/i.test(filename)) { return "fauna"; }
+    if (/\.faunarc$/i.test(filename)) { return "fauna"; }
     if (/\.dsp$/i.test(filename)) { return "faust"; }
     if (/\.fbx$/i.test(filename)) { return "fbx"; }
     if (/\.fxl$/i.test(filename)) { return "fexl"; }
@@ -675,6 +705,8 @@ function matchIcon(filename) {
     if (/\.otf$/i.test(filename)) { return "font"; }
     if (/\.pfb$/i.test(filename)) { return "font"; }
     if (/\.pfm$/i.test(filename)) { return "font"; }
+    if (/\.tfm$/i.test(filename)) { return "font"; }
+    if (/\.dfont$/i.test(filename)) { return "font"; }
     if (/\.psfu?$/i.test(filename)) { return "font-bitmap"; }
     if (/\.pcf$/i.test(filename)) { return "font-bitmap"; }
     if (/\.psftx$/i.test(filename)) { return "font-bitmap"; }
@@ -730,17 +762,11 @@ function matchIcon(filename) {
     if (/^\.csscomb\.json$/i.test(filename)) { return "gear"; }
     if (/^text\.enc$/.test(filename)) { return "gear"; }
     if (/\.csslintrc$/i.test(filename)) { return "gear"; }
-    if (/\.jsbeautifyrc$/i.test(filename)) { return "gear"; }
-    if (/\.jshintrc$/i.test(filename)) { return "gear"; }
     if (/\.htmlhintrc$/i.test(filename)) { return "gear"; }
-    if (/\.coffeelintignore$/i.test(filename)) { return "gear"; }
-    if (/\.jscsrc$/i.test(filename)) { return "gear"; }
     if (/\.module$/i.test(filename)) { return "gear"; }
     if (/\.codoopts$/i.test(filename)) { return "gear"; }
-    if (/\.yardopts$/i.test(filename)) { return "gear"; }
     if (/\.arcconfig$/i.test(filename)) { return "gear"; }
     if (/\.pairs$/i.test(filename)) { return "gear"; }
-    if (/\.python-version$/i.test(filename)) { return "gear"; }
     if (/\.lintstagedrc$/i.test(filename)) { return "gear"; }
     if (/\.indent\.pro$/i.test(filename)) { return "gear"; }
     if (/^\./.test(filename)) { return "gear"; }
@@ -753,6 +779,7 @@ function matchIcon(filename) {
     if (/^Settings\.StyleCop$/.test(filename)) { return "code"; }
     if (/\.4th$/i.test(filename)) { return "code"; }
     if (/\.adm[lx]$/i.test(filename)) { return "code"; }
+    if (/\.[ad]sl$/i.test(filename)) { return "code"; }
     if (/\.aepx$/i.test(filename)) { return "code"; }
     if (/\.appxmanifest$/i.test(filename)) { return "code"; }
     if (/\.ash$/i.test(filename)) { return "code"; }
@@ -861,7 +888,6 @@ function matchIcon(filename) {
     if (/\.wsf$/i.test(filename)) { return "code"; }
     if (/\.x3d$/i.test(filename)) { return "code"; }
     if (/\.xacro$/i.test(filename)) { return "code"; }
-    if (/\.xaml$/i.test(filename)) { return "code"; }
     if (/\.xib$/i.test(filename)) { return "code"; }
     if (/\.xlf$/i.test(filename)) { return "code"; }
     if (/\.xliff$/i.test(filename)) { return "code"; }
@@ -888,6 +914,7 @@ function matchIcon(filename) {
     if (/^(ATOM_)?COMMIT_EDITMSG$/.test(filename)) { return "git-commit"; }
     if (/^MERGE_(HEAD|MODE|MSG)$/.test(filename)) { return "git-merge"; }
     if (/^\.gitlab-ci\.yml$/.test(filename)) { return "gitlab"; }
+    if (/^\.?gitpod\.ya?ml$/i.test(filename)) { return "gitpod"; }
     if (/\.glade$/i.test(filename)) { return "glade"; }
     if (/^glide\.ya?ml$/i.test(filename)) { return "glide"; }
     if (/\.gltf$/i.test(filename)) { return "gltf"; }
@@ -896,6 +923,7 @@ function matchIcon(filename) {
     if (/\.gn$/i.test(filename)) { return "gn"; }
     if (/\.gni$/i.test(filename)) { return "gn"; }
     if (/\.(gnu|gplv[23])$/i.test(filename)) { return "gnu"; }
+    if (/^([AL]?GPL|GFDL)(\b|_)/.test(filename)) { return "gnu"; }
     if (/\.gtk/.test(filename)) { return "gnome"; }
     if (/\.(gp|plo?t|gnuplot)$/i.test(filename)) { return "gnuplot"; }
     if (/\.go$/i.test(filename)) { return "go"; }
@@ -916,12 +944,15 @@ function matchIcon(filename) {
     if (/\.abnf$/i.test(filename)) { return "bnf"; }
     if (/\.ebnf$/i.test(filename)) { return "bnf"; }
     if (/\.cddl$/i.test(filename)) { return "bnf"; }
+    if (/\.(cf|lbnf)$/i.test(filename)) { return "bnf"; }
     if (/\.gf$/i.test(filename)) { return "gf"; }
+    if (/\.gcx$/i.test(filename)) { return "grapher"; }
     if (/\.graphql$/i.test(filename)) { return "graphql"; }
     if (/\.graphqls$/i.test(filename)) { return "graphql"; }
     if (/\.gql$/i.test(filename)) { return "graphql"; }
     if (/^\.graphqlrc(?:\.(?:json|js|ya?ml))?$/i.test(filename)) { return "graphql"; }
     if (/^graphql\.config\.js$/.test(filename)) { return "graphql"; }
+    if (/^codegen\.(json|ya?ml)$/i.test(filename)) { return "gql-codegen"; }
     if (/\.gv$/i.test(filename)) { return "graphviz"; }
     if (/\.dot$/i.test(filename)) { return "graphviz"; }
     if (/\.(plantuml|[ip]uml|pu)$/i.test(filename)) { return "graphviz"; }
@@ -951,6 +982,7 @@ function matchIcon(filename) {
     if (/\.lhs$/i.test(filename)) { return "haskell"; }
     if (/\.hs-boot$/i.test(filename)) { return "haskell"; }
     if (/\.hsig$/i.test(filename)) { return "haskell"; }
+    if (/^hie\.ya?ml($|\.)/i.test(filename)) { return "hie"; }
     if (/\.hx([sm]l|)?$/.test(filename)) { return "haxe"; }
     if (/\.hxproj$/i.test(filename)) { return "haxedevelop"; }
     if (/^\.p4ignore$/i.test(filename)) { return "helix"; }
@@ -966,6 +998,8 @@ function matchIcon(filename) {
     if (/\.hc\.z$/i.test(filename)) { return "templeos"; }
     if (/^Brewfile$/.test(filename)) { return "brew"; }
     if (/\.hl$/i.test(filename)) { return "hoplon"; }
+    if (/\.(hipnc|hip|i3d|picnc)$/i.test(filename)) { return "houdini"; }
+    if (/\.vfl$/i.test(filename)) { return "houdini"; }
     if (/\.hound\.ya?ml$/i.test(filename)) { return "houndci"; }
     if (/\.x?html?$/i.test(filename)) { return "html5"; }
     if (/\.cshtml$/i.test(filename)) { return "html5"; }
@@ -1005,6 +1039,7 @@ function matchIcon(filename) {
     if (/\.a?png$/i.test(filename)) { return "image"; }
     if (/\.gif$/i.test(filename)) { return "image"; }
     if (/\.jpe?g$/i.test(filename)) { return "image"; }
+    if (/\.(avif|heifs?|hif)$/i.test(filename)) { return "image"; }
     if (/\.ico$/i.test(filename)) { return "image"; }
     if (/\.webp$/i.test(filename)) { return "image"; }
     if (/\.bmp$/i.test(filename)) { return "image"; }
@@ -1026,7 +1061,6 @@ function matchIcon(filename) {
     if (/\.hdp$/i.test(filename)) { return "image"; }
     if (/\.hdr$/i.test(filename)) { return "image"; }
     if (/\.heic$/i.test(filename)) { return "image"; }
-    if (/\.heif$/i.test(filename)) { return "image"; }
     if (/\.icns$/i.test(filename)) { return "image"; }
     if (/\.iff$/i.test(filename)) { return "image"; }
     if (/\.(jp[f2xm]|j2c|mj2)$/i.test(filename)) { return "image"; }
@@ -1148,6 +1182,8 @@ function matchIcon(filename) {
     if (/^keybase\.txt$/i.test(filename)) { return "keybase"; }
     if (/\.keynote$/i.test(filename)) { return "keynote"; }
     if (/\.knt$/i.test(filename)) { return "keynote"; }
+    if (/\.hypr$/i.test(filename)) { return "kibo"; }
+    if (/\.hypr\.live$/i.test(filename)) { return "kibo"; }
     if (/\.kicad_pcb$/i.test(filename)) { return "kicad"; }
     if (/\.kicad_pcb-bak$/i.test(filename)) { return "kicad"; }
     if (/\.kicad_mod$/i.test(filename)) { return "kicad"; }
@@ -1165,8 +1201,9 @@ function matchIcon(filename) {
     if (/(^|\.)kazelcfg\.json$/i.test(filename)) { return "kubernetes"; }
     if (/\.(csl|kusto)$/i.test(filename)) { return "kusto"; }
     if (/Kusto (Query.?Language|Explorer)|^KQL$/i.test(filename)) { return "kusto"; }
-    if (/\.lvproj$/i.test(filename)) { return "labview"; }
+    if (/\.lv(proj|lib)$/i.test(filename)) { return "labview"; }
     if (/\.blade(\.php)?$/i.test(filename)) { return "laravel"; }
+    if (/\.lark$/i.test(filename)) { return "lark"; }
     if (/\.lasso$/i.test(filename)) { return "lasso"; }
     if (/\.las$/i.test(filename)) { return "lasso"; }
     if (/\.lasso8$/i.test(filename)) { return "lasso"; }
@@ -1184,7 +1221,8 @@ function matchIcon(filename) {
     if (/\.lektorproject$/i.test(filename)) { return "lektor"; }
     if (/^lerna\.json$/i.test(filename)) { return "lerna"; }
     if (/project\.clj$/i.test(filename)) { return "lein"; }
-    if (/\.l(ex)?$/i.test(filename)) { return "lex"; }
+    if (/\.l(e?x)?$/i.test(filename)) { return "lex"; }
+    if (/^lexer\.x$/i.test(filename)) { return "lex"; }
     if (/\.flex$/i.test(filename)) { return "lex"; }
     if (/\.lfe$/i.test(filename)) { return "lfe"; }
     if (/^\.?lgtm\.ya?ml$/i.test(filename)) { return "lgtm"; }
@@ -1230,6 +1268,7 @@ function matchIcon(filename) {
     if (/^Makefile/.test(filename)) { return "checklist"; }
     if (/^mk\.config$/.test(filename)) { return "checklist"; }
     if (/\.(mk|mak|make)$/i.test(filename)) { return "checklist"; }
+    if (/^contrib\.make?([-.]|$)/i.test(filename)) { return "checklist"; }
     if (/^BSDmakefile$/i.test(filename)) { return "checklist"; }
     if (/^GNUmakefile$/i.test(filename)) { return "checklist"; }
     if (/^makefile\.sco$/i.test(filename)) { return "checklist"; }
@@ -1238,17 +1277,18 @@ function matchIcon(filename) {
     if (/^mkfile$/i.test(filename)) { return "checklist"; }
     if (/^\.?qmake$/i.test(filename)) { return "checklist"; }
     if (/\.am$/i.test(filename)) { return "checklist"; }
-    if (/\.bb$/i.test(filename)) { return "checklist"; }
     if (/^DEPS$/.test(filename)) { return "checklist"; }
     if (/\.mms$/i.test(filename)) { return "checklist"; }
     if (/\.mmk$/i.test(filename)) { return "checklist"; }
     if (/\.pri$/i.test(filename)) { return "checklist"; }
     if (/\.mak?o$/i.test(filename)) { return "mako"; }
-    if (/\.(1([bcmstx]|has|in)?|[24568]|3(avl|bsm|cfgadm|in|[cmx]|perl|pm?|qt)?|7(d|fs|i|ipp|m|p)?|9[efps]?|chem|eqn|groff|man|mandoc|mdoc|me|mom|nr?|nroff|pic|roff?|tmac|tmac-u|tr|troff)$/i.test(filename)) { return "manpage"; }
+    if (/\.(1([bcmstx]|has|in)?|[24568]|3(avl|bsm|cfgadm|in|[cmx]|perl|pm?|qt)?|7(d|fs|i|ipp|m|p)?|9[efps]?|eqn|groff|man|mandoc|mdoc|me|mom|nr?|nroff|roff?|tmac|tmac-u|tr|troff)$/i.test(filename)) { return "manpage"; }
     if (/^(man|mdoc)\.template$/i.test(filename)) { return "manpage"; }
+    if (/\.(chem|dformat|pic)$|^grap(\.tex)?\.defines$/i.test(filename)) { return "manpage"; }
     if (/\.(rnh|rno|run|runoff)$/i.test(filename)) { return "manpage"; }
     if (/(^|\.)((troff|eqn)rc(-end)?)$/i.test(filename)) { return "manpage"; }
     if (/^tmac\.|^(mmn|mmt|toc\.entries)$/i.test(filename)) { return "manpage"; }
+    if (/(^|\/)samples\/(eqn|mm|[nt]?roff|pic|tbl)\.[a-z]+$/i.test(filename)) { return "manpage"; }
     if (/(\\|\/)(?:man(\w+)\1[^\\\/]+\.\2|(?:tmac|eqnchar)\.d\1(?:ms\.)?[^\\\/.]+(?:\.in)?|picasso\1(?:defs\.\w+|disclaimer))$/.test(filename)) { return "manpage"; }
     if (/\.css\.map$/i.test(filename)) { return "sourcemap"; }
     if (/\.js\.map$/i.test(filename)) { return "sourcemap"; }
@@ -1271,8 +1311,6 @@ function matchIcon(filename) {
     if (/\.mt$/i.test(filename)) { return "mathematica"; }
     if (/\.nb$/i.test(filename)) { return "mathematica"; }
     if (/\.nbp$/i.test(filename)) { return "mathematica"; }
-    if (/\.wl$/i.test(filename)) { return "mathematica"; }
-    if (/\.wlt$/i.test(filename)) { return "mathematica"; }
     if (/^MathJax[^.]*\.[cm]?js$/i.test(filename)) { return "mathjax"; }
     if (/\.matlab$/i.test(filename)) { return "matlab"; }
     if (/\.mlappinstall$/i.test(filename)) { return "matlab"; }
@@ -1308,6 +1346,8 @@ function matchIcon(filename) {
     if (/\.(mmd|mermaid)$/i.test(filename)) { return "mermaid"; }
     if (/^(meson\.build|meson_options\.txt)$/i.test(filename)) { return "meson"; }
     if (/\.metal$/i.test(filename)) { return "metal"; }
+    if (/\.mp$/i.test(filename)) { return "metapost"; }
+    if (/\.mf$/i.test(filename)) { return "metapost"; }
     if (/\.accda$/i.test(filename)) { return "access"; }
     if (/\.accdb$/i.test(filename)) { return "access"; }
     if (/\.accde$/i.test(filename)) { return "access"; }
@@ -1400,9 +1440,11 @@ function matchIcon(filename) {
     if (/\.stl$/i.test(filename)) { return "model"; }
     if (/\.u3d$/i.test(filename)) { return "model"; }
     if (/\.(rviz|vcg)$/i.test(filename)) { return "model"; }
+    if (/\.(ste?p|p21)$/i.test(filename)) { return "model"; }
     if (/\.x$/i.test(filename)) { return "model"; }
     if (/\.mo$/i.test(filename)) { return "modelica"; }
     if (/^\.?modernizr(rc)?\.[cm]?js$|^modernizr([-\.]custom|-\d\.\d+)(\.\d+)?\.[cm]?js$/i.test(filename)) { return "modernizr"; }
+    if (/^web-(dev-server|test-runner)\.config\.([cm]?js)$/i.test(filename)) { return "modernweb"; }
     if (/\.lxo$/i.test(filename)) { return "modo"; }
     if (/\.mod$/i.test(filename)) { return "modula2"; }
     if (/\.def$/i.test(filename)) { return "modula2"; }
@@ -1457,7 +1499,7 @@ function matchIcon(filename) {
     if (/\.ppm$/i.test(filename)) { return "image"; }
     if (/\.pnm$/i.test(filename)) { return "image"; }
     if (/^nginx(\.[-\w]+)*\.conf$/i.test(filename)) { return "nginx"; }
-    if (/\.nginxconf$/i.test(filename)) { return "nginx"; }
+    if (/\.nginx(conf)?$/i.test(filename)) { return "nginx"; }
     if (/\.nib$/i.test(filename)) { return "nib"; }
     if (/\.5c$/i.test(filename)) { return "nickle"; }
     if (/^nightwatch\.conf(ig)?\.[cm]?js$/i.test(filename)) { return "nightwatch"; }
@@ -1479,6 +1521,7 @@ function matchIcon(filename) {
     if (/^BUNDLED_NODE_VERSION$/.test(filename)) { return "node"; }
     if (/\.node_repl_history$/i.test(filename)) { return "node"; }
     if (/^nodemon\.json$|\.nodemonignore$/i.test(filename)) { return "nodemon"; }
+    if (/^\.?nokogirirc($|\.)/i.test(filename)) { return "nokogiri"; }
     if (/\.nomad$/i.test(filename)) { return "nomad"; }
     if (/\.noon$/i.test(filename)) { return "noon"; }
     if (/^normalize(\.min)?\.(css|less|scss|styl)$/i.test(filename)) { return "normalize"; }
@@ -1491,12 +1534,20 @@ function matchIcon(filename) {
     if (/\.nu$/i.test(filename)) { return "recycle"; }
     if (/^Nukefile$/.test(filename)) { return "recycle"; }
     if (/\.nuspec$/i.test(filename)) { return "nuget"; }
+    if (/\.nupkg$/i.test(filename)) { return "nuget"; }
     if (/\.pkgproj$/i.test(filename)) { return "nuget"; }
+    if (/\.snupkg$/i.test(filename)) { return "nuget"; }
+    if (/\.psmdcp$/i.test(filename)) { return "nuget"; }
+    if (/\.npy$/i.test(filename)) { return "numpy"; }
+    if (/\.npz$/i.test(filename)) { return "numpy"; }
     if (/\.numpy$/i.test(filename)) { return "numpy"; }
     if (/\.numpyw$/i.test(filename)) { return "numpy"; }
     if (/\.numsc$/i.test(filename)) { return "numpy"; }
     if (/\.(nunjucks|njk)$/i.test(filename)) { return "nunjucks"; }
     if (/^nuxt\.config\.[jt]s$/i.test(filename)) { return "nuxt"; }
+    if (/\.nss$/i.test(filename)) { return "nwscript"; }
+    if (/\.ncs$/i.test(filename)) { return "nwscript"; }
+    if (/\.ndb$/i.test(filename)) { return "nwscript"; }
     if (/^nx\.json$/i.test(filename)) { return "nx"; }
     if (/\.nxc$/i.test(filename)) { return "nxc"; }
     if (/\.ob2$/i.test(filename)) { return "oberon"; }
@@ -1516,6 +1567,11 @@ function matchIcon(filename) {
     if (/\.octave_hist$/i.test(filename)) { return "octave"; }
     if (/\.octaverc$/i.test(filename)) { return "octave"; }
     if (/\.odin$/i.test(filename)) { return "odin"; }
+    if (/\.graffle$/i.test(filename)) { return "omnigraffle"; }
+    if (/\.gdiagramstyle$/i.test(filename)) { return "omnigraffle"; }
+    if (/\.gstencil$/i.test(filename)) { return "omnigraffle"; }
+    if (/\.gtemplate$/i.test(filename)) { return "omnigraffle"; }
+    if (/\.(o3|ogone)$/i.test(filename)) { return "ogone"; }
     if (/\.ooc$/i.test(filename)) { return "ooc"; }
     if (/\.opa$/i.test(filename)) { return "opa"; }
     if (/^\+(CONTENTS|DESC|DISPLAY)$/.test(filename)) { return "openbsd"; }
@@ -1633,6 +1689,7 @@ function matchIcon(filename) {
     if (/\.pfa$/i.test(filename)) { return "postscript"; }
     if (/\.a[fm]m$/i.test(filename)) { return "postscript"; }
     if (/\.eps[fi]$/i.test(filename)) { return "postscript"; }
+    if (/^Fontmap$/.test(filename)) { return "postscript"; }
     if (/\.gsf$/i.test(filename)) { return "postscript"; }
     if (/\.pov$/i.test(filename)) { return "povray"; }
     if (/\.pbl$/i.test(filename)) { return "powerbuilder"; }
@@ -1647,9 +1704,11 @@ function matchIcon(filename) {
     if (/\.psm1$/i.test(filename)) { return "powershell"; }
     if (/\.ps1xml$/i.test(filename)) { return "powershell"; }
     if (/^\.pre-commit\b.*\.ya?ml$/i.test(filename)) { return "precommit"; }
-    if (/\.prettierrc(\.([cm]?js|json|ya?ml))?$|^prettier\.config\.[cm]?js$/i.test(filename)) { return "prettier"; }
+    if (/\.prettierrc(\.([cm]?js|json5?|ya?ml))?$|^prettier\.config\.[cm]?js$/i.test(filename)) { return "prettier"; }
     if (/\.prettierignore$/i.test(filename)) { return "prettier"; }
     if (/\.ppd$/i.test(filename)) { return "print"; }
+    if (/\.upp$/i.test(filename)) { return "print"; }
+    if (/\.joboptions$/i.test(filename)) { return "print"; }
     if (/\.prisma$/i.test(filename)) { return "prisma"; }
     if (/^project\.pros$/i.test(filename)) { return "pros"; }
     if (/\.pde$/i.test(filename)) { return "processing"; }
@@ -1671,6 +1730,7 @@ function matchIcon(filename) {
     if (/\.purs$/i.test(filename)) { return "purescript"; }
     if (/^requirements\.in$/i.test(filename)) { return "pypi"; }
     if (/\.arr$/i.test(filename)) { return "pyret"; }
+    if (/^pytest\.ini$/.test(filename)) { return "pytest"; }
     if (/\.py$/i.test(filename)) { return "python"; }
     if (/\.ipy$/i.test(filename)) { return "python"; }
     if (/\.isolate$/i.test(filename)) { return "python"; }
@@ -1689,6 +1749,7 @@ function matchIcon(filename) {
     if (/\.xpy$/i.test(filename)) { return "python"; }
     if (/\.smk$/i.test(filename)) { return "python"; }
     if (/\.rpy$/i.test(filename)) { return "python"; }
+    if (/^py\.typed$/i.test(filename)) { return "python"; }
     if (/\.?(pypirc|pythonrc|python-venv)$/i.test(filename)) { return "python"; }
     if (/^(SConstruct|SConscript)$/.test(filename)) { return "python"; }
     if (/^(Snakefile|WATCHLISTS)$/.test(filename)) { return "python"; }
@@ -1728,12 +1789,15 @@ function matchIcon(filename) {
     if (/^raphael(\.min|\.no-deps)*\.[cm]?js$/i.test(filename)) { return "raphael"; }
     if (/\.rsc$/i.test(filename)) { return "rascal"; }
     if (/^razzle\.config\./i.test(filename)) { return "razzle"; }
+    if (/^\.?readthedocs\.ya?ml$/i.test(filename)) { return "readthedocs"; }
     if (/^\.rehyperc(\.([cm]?js|json|ya?ml))?$/i.test(filename)) { return "remark"; }
     if (/^\.remarkrc(\.([cm]?js|json|ya?ml))?$/i.test(filename)) { return "remark"; }
     if (/^\.retextrc(\.([cm]?js|json|ya?ml))?$/i.test(filename)) { return "remark"; }
     if (/\.rehypeignore$/i.test(filename)) { return "remark"; }
     if (/\.remarkignore$/i.test(filename)) { return "remark"; }
     if (/\.retextignore$/i.test(filename)) { return "remark"; }
+    if (/\.r(est)?ql$/i.test(filename)) { return "restql"; }
+    if (/^restql\.ya?ml$/i.test(filename)) { return "restql"; }
     if (/\.Rdata$/i.test(filename)) { return "rdata"; }
     if (/\.rdb$/i.test(filename)) { return "rdata"; }
     if (/\.rds$/i.test(filename)) { return "rdata"; }
@@ -1743,13 +1807,15 @@ function matchIcon(filename) {
     if (/\.react\.[cm]?js$/i.test(filename)) { return "react"; }
     if (/^README(\b|_)|^((un)?licen[sc]es?(\.mysql)?|(read|readme|click|delete|keep|test)\.me)(\.(md|txt))?$|\.(readme|1st|licen[sc]es?)$/i.test(filename)) { return "book"; }
     if (/^(notice|bugs|changes|change[-_]?log([-._]?\d+)?|contribute|contributing|contributors|copy(ing|right)(\.regex)?|faq|fixes|hacking|history|install|maintainers|manifest|more\.stuff|notes|problems|projects|revision|terms|thanks|warnings)(_\w+)?$/i.test(filename)) { return "book"; }
-    if (/\b(changelog|copying(v?\d)?|install|read[-_]?me)\b|^licen[sc]es?[-._]/i.test(filename)) { return "book"; }
-    if (/^news([-_.]?[-\d]+)?$/i.test(filename)) { return "book"; }
+    if (/\b(changelog|copying(v?\d)?|install|notes?|notices?|read[-_]?me)\b|^licen[sc]es?[-._]/i.test(filename)) { return "book"; }
+    if (/^(news|release[-_.]?notes)([-_.]?[-\d]+)?$/i.test(filename)) { return "book"; }
     if (/^zork\d\.(?!pre$|pur$)[a-z]+$/.test(filename)) { return "book"; }
     if (/^zork\d\.doc$/.test(filename)) { return "book"; }
+    if (/^sudo[-_]lecture$/i.test(filename)) { return "book"; }
     if (/\.changes$/i.test(filename)) { return "book"; }
     if (/\.journal$/i.test(filename)) { return "book"; }
     if (/\.faq$/i.test(filename)) { return "book"; }
+    if (/\.yo$/i.test(filename)) { return "book"; }
     if (/\.rbbas$/i.test(filename)) { return "xojo"; }
     if (/\.rbfrm$/i.test(filename)) { return "xojo"; }
     if (/\.rbmnu$/i.test(filename)) { return "xojo"; }
@@ -1774,6 +1840,7 @@ function matchIcon(filename) {
     if (/\.regexp?$/i.test(filename)) { return "regex"; }
     if (/(?!^renovate$)(\.|^)renovate(rc)?(\.json)?$/i.test(filename)) { return "renovate"; }
     if (/^require([-.]min|dev)?\.[cm]?js$/i.test(filename)) { return "requirejs"; }
+    if (/\.resi$/i.test(filename)) { return "rescript"; }
     if (/\.re?st(\.txt)?$/i.test(filename)) { return "rst"; }
     if (/^re?st$/i.test(filename)) { return "rst"; }
     if (/\.rexx?$/i.test(filename)) { return "rexx"; }
@@ -1792,13 +1859,14 @@ function matchIcon(filename) {
     if (/\.rss$/i.test(filename)) { return "rss"; }
     if (/\.rproj$/i.test(filename)) { return "rstudio"; }
     if (/^rsyncd\.conf$/i.test(filename)) { return "rsync"; }
-    if (/\.(rb|ru|ruby|erb|gemspec|god|mspec|pluginspec|podspec|rabl|rake|opal)$/i.test(filename)) { return "ruby"; }
+    if (/\.(rb|ru|ruby|erb|god|mspec|pluginspec|podspec|rabl|rake|opal)$/i.test(filename)) { return "ruby"; }
     if (/^\.?(irbrc|gemrc|pryrc|ruby-(gemset|version))$/i.test(filename)) { return "ruby"; }
     if (/^(Appraisals|(Rake|App|[bB]uild|Cap|Danger|Deliver|Fast|Guard|Jar|Maven|Pod|Puppet|Snap)file(\.lock)?)$/.test(filename)) { return "ruby"; }
     if (/\.(jbuilder|rbuild|rb[wx]|builder)$/i.test(filename)) { return "ruby"; }
     if (/^rails$/.test(filename)) { return "ruby"; }
     if (/\.watchr$/i.test(filename)) { return "ruby"; }
     if (/^\.rubocop(_todo)?\.ya?ml$/i.test(filename)) { return "rubocop"; }
+    if (/\.gemspec$/i.test(filename)) { return "rubygems"; }
     if (/\.rs$/i.test(filename)) { return "rust"; }
     if (/\.rlib$/i.test(filename)) { return "rust"; }
     if (/^rust-toolchain$/.test(filename)) { return "rust"; }
@@ -1810,6 +1878,8 @@ function matchIcon(filename) {
     if (/^\.sailsrc$/i.test(filename)) { return "sails"; }
     if (/\.sls$/i.test(filename)) { return "saltstack"; }
     if (/^Salt(State)?$/i.test(filename)) { return "saltstack"; }
+    if (/\.sb$/i.test(filename)) { return "sandbox"; }
+    if (/^(Sandbox Profile Language|SBPL)$/i.test(filename)) { return "sandbox"; }
     if (/\.sas$/i.test(filename)) { return "sas"; }
     if (/\.scss$/i.test(filename)) { return "sass"; }
     if (/\.sass$/i.test(filename)) { return "sass"; }
@@ -1852,6 +1922,7 @@ function matchIcon(filename) {
     if (/^\.?_?dir_?colors$/i.test(filename)) { return "terminal"; }
     if (/\.inputrc$/i.test(filename)) { return "terminal"; }
     if (/\.tmux$/i.test(filename)) { return "terminal"; }
+    if (/rc_Apple_Terminal$/i.test(filename)) { return "terminal"; }
     if (/^(configure|config\.(guess|rpath|status|sub)|depcomp|libtool|compile)$/.test(filename)) { return "terminal"; }
     if (/^\/(private\/)?etc\/([^\/]+\/)*(profile$|nanorc$|rc\.|csh\.)/i.test(filename)) { return "terminal"; }
     if (/^\.?cshrc$/i.test(filename)) { return "terminal"; }
@@ -1875,6 +1946,7 @@ function matchIcon(filename) {
     if (/^snapcraft\.ya?ml$/i.test(filename)) { return "snapcraft"; }
     if (/^snap\.svg([-.]min)?\.[cm]?js$/i.test(filename)) { return "snapsvg"; }
     if (/\.snort$/i.test(filename)) { return "snort"; }
+    if (/^snowpack\.config\.([cm]?js|ts|json)$/i.test(filename)) { return "snowpack"; }
     if (/\.snyk$/i.test(filename)) { return "snyk"; }
     if (/^\.solidarity(\.json)?$/i.test(filename)) { return "solidarity"; }
     if (/\.sol(idity)?$/i.test(filename)) { return "solidity"; }
@@ -1882,6 +1954,7 @@ function matchIcon(filename) {
     if (/\.rbi$/i.test(filename)) { return "sorbet"; }
     if (/\.(sma|sp)$/i.test(filename)) { return "clojure"; }
     if (/\.inc$/i.test(filename)) { return "clojure"; }
+    if (/\.spe$/i.test(filename)) { return "spacengine"; }
     if (/(^|\.)spacemacs$/i.test(filename)) { return "spacemacs"; }
     if (/\.sparql$/i.test(filename)) { return "sparql"; }
     if (/\.rq$/i.test(filename)) { return "sparql"; }
@@ -1919,7 +1992,7 @@ function matchIcon(filename) {
     if (/\.stan$/i.test(filename)) { return "stan"; }
     if (/^(\.bazelrc|bazel\.rc|bazel\.bazelrc)$/i.test(filename)) { return "bazel"; }
     if (/^(BUILD|WORKSPACE)(.[Bb][Aa][Zz][Ee][Ll])?$/.test(filename)) { return "bazel"; }
-    if (/\.(bzl|star)$/i.test(filename)) { return "bazel"; }
+    if (/\.(bazel|bzl|star)$/i.test(filename)) { return "bazel"; }
     if (/^\.gazelcfg\.json$/i.test(filename)) { return "bazel"; }
     if (/\.do$/i.test(filename)) { return "stata"; }
     if (/\.ado$/i.test(filename)) { return "stata"; }
@@ -1931,6 +2004,7 @@ function matchIcon(filename) {
     if (/\.stencil$/i.test(filename)) { return "stencil"; }
     if (/^stdlib(-.+)?\.[cm]?js$/i.test(filename)) { return "stdlibjs"; }
     if (/^stdlib(-.+)?\.[cm]?js\.gz$/i.test(filename)) { return "stdlibjs"; }
+    if (/^\.?stitches.config?\.([cm]?js|ts)$/i.test(filename)) { return "stitches"; }
     if (/\.(story|stories)\.([cm]?js|jsx)$/i.test(filename)) { return "storybook"; }
     if (/\.(story|stories)\.tsx?$/i.test(filename)) { return "storybook"; }
     if (/\.story$/i.test(filename)) { return "storyist"; }
@@ -1963,6 +2037,7 @@ function matchIcon(filename) {
     if (/\.?c?tags$/i.test(filename)) { return "tag"; }
     if (/\.gemtags/i.test(filename)) { return "tag"; }
     if (/\.hgtags$|^localtags$/i.test(filename)) { return "tag"; }
+    if (/^\.?VERSION$/i.test(filename)) { return "tag"; }
     if (/^\.atom-socket-.+\.\d$/.test(filename)) { return "tag"; }
     if (/\.pid$/i.test(filename)) { return "tag"; }
     if (/\.tld$/i.test(filename)) { return "tag"; }
@@ -1988,31 +2063,32 @@ function matchIcon(filename) {
     if (/\.tfstate(\.backup)?$/i.test(filename)) { return "terraform"; }
     if (/^\.(terser|uglify)rc(\.\w+)?$/i.test(filename)) { return "terser"; }
     if (/^\.testcaferc\.json$/i.test(filename)) { return "testcafe"; }
-    if (/[._-](spec|test)s?\.((lit)?coffee|iced|cjsx)$/i.test(filename)) { return "test-coffee"; }
+    if (/([._-](spec|test)s?|^test[-_].*)\.((lit)?coffee|iced|cjsx)$/i.test(filename)) { return "test-coffee"; }
     if (/([\\\/])t\1t?\d+(?:(?!\1).)+\.sh$|[._-](spec|test)s?\.sh$/i.test(filename)) { return "test-generic"; }
     if (/\.bats$/i.test(filename)) { return "test-generic"; }
     if (/\.test$/i.test(filename)) { return "test-generic"; }
     if (/\.xspec$/i.test(filename)) { return "test-generic"; }
-    if (/[._-](spec|test)s?\.go$/i.test(filename)) { return "test-go"; }
-    if (/[._-](spec|test)s?\.(hsc?|c2hs|lhs)$/i.test(filename)) { return "test-hs"; }
-    if (/[._-](spec|test)s?\.([_s]?js|js[bms]|es\d*)$/i.test(filename)) { return "test-js"; }
-    if (/[._-](spec|test)s?\.mjs$/i.test(filename)) { return "test-js"; }
-    if (/[._-](spec|test)s?\.cjs$/i.test(filename)) { return "test-js"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.go$/i.test(filename)) { return "test-go"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.(hsc?|c2hs|lhs)$/i.test(filename)) { return "test-hs"; }
+    if (/([._-](spec|test)s?|^test[._-].*)\.([_s]?js|js[bms]|es\d*)$/i.test(filename)) { return "test-js"; }
+    if (/([._-](spec|test)s?|^test[._-].*)\.mjs$/i.test(filename)) { return "test-js"; }
+    if (/([._-](spec|test)s?|^test[._-].*)\.cjs$/i.test(filename)) { return "test-js"; }
     if (/([\\\/])(?:(spec|test)s?|t)\1(?:\d+[-.])+(?!-)[^.\\\/]+\.js$/i.test(filename)) { return "test-js"; }
     if (/([\\\/])(?:(spec|test)s?|t)\1(?:\d+[-.])+(?!-)[^.\\\/]+\.mjs$/i.test(filename)) { return "test-js"; }
     if (/([\\\/])(?:(spec|test)s?|t)\1(?:\d+[-.])+(?!-)[^.\\\/]+\.cjs$/i.test(filename)) { return "test-js"; }
     if (/\.t$/i.test(filename)) { return "test-perl"; }
+    if (/^test[._-].*\.pl$/i.test(filename)) { return "test-perl"; }
     if (/([\\\x2F])t\1(?:(?!\1).)+\.t$/i.test(filename)) { return "test-perl"; }
     if (/([\\\x2F])(test|spec)s?(\1((?!\1).)+)*\1((?!\1).)+[._-](spec|test)s?\.p(er)?l$/i.test(filename)) { return "test-perl"; }
-    if (/[._-](spec|test)s?\.py(3|thon)?/i.test(filename)) { return "test-python"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.py(3|thon)?/i.test(filename)) { return "test-python"; }
     if (/([\\\x2F])(test|spec)s?(\1((?!\1).)+)*\1(((?!\1).)+[._-](?:spec|test)s?|(?:spec|test)s?[._-].+)\.py(3|thon)?$/i.test(filename)) { return "test-python"; }
-    if (/[._-](spec|test)s?\.(jsx|react\.[cm]?js)$/.test(filename)) { return "test-react"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.(jsx|react\.[cm]?js)$/.test(filename)) { return "test-react"; }
     if (/([\\\/])(spec|test)s?\1(?:\d+[-.])+(?!-)[^.\\\/]+\.(jsx|react\.[cm]?js)$/i.test(filename)) { return "test-react"; }
-    if (/[._-](spec|test)s?\.(rb|ruby)$/i.test(filename)) { return "test-ruby"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.(rb|ruby)$/i.test(filename)) { return "test-ruby"; }
     if (/([\\\x2F])(t|tests?|specs?)\1+(?:(?!\1).)*\.(rb|ruby)$/.test(filename)) { return "test-ruby"; }
-    if (/[._-](spec|test)s?\.rs$/i.test(filename)) { return "test-rust"; }
-    if (/[._-](spec|test)s?\.ts$/i.test(filename)) { return "test-ts"; }
-    if (/[._-](spec|test)s?\.tsx$/i.test(filename)) { return "test-ts"; }
+    if (/(^test[-_].*|[._-](spec|test)s?)\.rs$/i.test(filename)) { return "test-rust"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.ts$/i.test(filename)) { return "test-ts"; }
+    if (/(^test[._-].*|[._-](spec|test)s?)\.tsx$/i.test(filename)) { return "test-ts"; }
     if (/([\\\/])(spec|test)s?\1(?:\d+[-.])+(?!-)[^.\\\/]+\.ts$/i.test(filename)) { return "test-ts"; }
     if (/([\\\/])(spec|test)s?\1(?:\d+[-.])+(?!-)[^.\\\/]+\.tsx$/i.test(filename)) { return "test-ts"; }
     if (/\.tex$/i.test(filename)) { return "tex"; }
@@ -2096,8 +2172,9 @@ function matchIcon(filename) {
     if (/^unibeautify\.config\.[cm]?js$/i.test(filename)) { return "unibeautify"; }
     if (/\.unibeautifyrc\.([cm]?js|json)$/i.test(filename)) { return "unibeautify"; }
     if (/\.unibeautifyrc\.ya?ml$/i.test(filename)) { return "unibeautify"; }
-    if (/^(ArabicShaping|Bidi(Brackets|CharacterTest|Mirroring|Test)|Blocks|CJKRadicals|CaseFolding|CompositionExclusions|Derived(Age|CoreProperties|NormalizationProps)|EastAsianWidth|EmojiSources|EquivalentUnifiedIdeograph|HangulSyllableType|Index|Indic(Positional|Syllabic)Category|Jamo|LineBreak|NameAliases|NamedSequences(Prov)?|NamesList|Normalization(Corrections|Test)|NushuSources|PropList|Property(Value)?Aliases|Script(Extension)?s|SpecialCasing|StandardizedVariants|TangutSources|U(nicode|Source)Data|VerticalOrientation)\.txt$/.test(filename)) { return "unicode"; }
-    if (/([\\\/])(UNIDATA|UCD)\1[^\\\/]+\.txt$/i.test(filename)) { return "unicode"; }
+    if (/^(ArabicShaping|Bidi(Brackets|CharacterTest|Mirroring|Test)|Blocks|CJKRadicals|CaseFolding|CompositionExclusions|Derived(Age|Name|Numeric(Type|Values)|BidiClass|BinaryProperties|CombiningClass|CoreProperties|DecompositionType|EastAsianWidth|GeneralCategory|Joining(Group|Type)|LineBreak|NormalizationProps)|EastAsianWidth|EmojiSources|EquivalentUnifiedIdeograph|(Grapheme|Line|Sentence|Word)Break(Property|Test)|HangulSyllableType|Index|Indic(Positional|Syllabic)Category|Jamo|LineBreak|NameAliases|NamedSequences(Prov)?|NamesList|Normalization(Corrections|Test)|NushuSources|PropList|Property(Value)?Aliases|Script(Extension)?s|SpecialCasing|StandardizedVariants|TangutSources|Unihan(_\w+)?|U(nicode|Source)Data|VerticalOrientation)\.txt$/.test(filename)) { return "unicode"; }
+    if (/^NamesList\.(lst|txt)$/.test(filename)) { return "unicode"; }
+    if (/([\\\/])(UNIDATA|UCD)(?:\1(?:auxiliary|emoji|extracted|unihan))?\1(?!ReadMe)[^\\\/]+\.txt$/i.test(filename)) { return "unicode"; }
     if (/\.units$/i.test(filename)) { return "scales"; }
     if (/^units\.lib$/i.test(filename)) { return "scales"; }
     if (/^\.?units[-_]?history$/i.test(filename)) { return "scales"; }
@@ -2158,6 +2235,7 @@ function matchIcon(filename) {
     if (/\.(vim|[gn]?vimrc)$/i.test(filename)) { return "vim"; }
     if (/^[.gn_]?vim(rc|info)$/i.test(filename)) { return "vim"; }
     if (/\.vmb$/i.test(filename)) { return "vim"; }
+    if (/(^|\.)n?exrc$/i.test(filename)) { return "vim"; }
     if (/\.ova$/i.test(filename)) { return "virtualbox"; }
     if (/\.ovf$/i.test(filename)) { return "virtualbox"; }
     if (/\.vhd$/i.test(filename)) { return "virtualbox"; }
@@ -2198,8 +2276,12 @@ function matchIcon(filename) {
     if (/\.vue$/i.test(filename)) { return "vue"; }
     if (/^vue\.config\.[cm]?js$/i.test(filename)) { return "vue"; }
     if (/\.vy$/i.test(filename)) { return "vyper"; }
+    if (/^w3c\.json$/i.test(filename)) { return "w3c"; }
     if (/^\.wallaby\.[cm]?js$/i.test(filename)) { return "wallaby"; }
     if (/\.walt$/i.test(filename)) { return "walt"; }
+    if (/\.wc3$/i.test(filename)) { return "warcraft3"; }
+    if (/\.jass$/i.test(filename)) { return "warcraft3"; }
+    if (/\.zn$/i.test(filename)) { return "warcraft3"; }
     if (/\.watchmanconfig$|^watchman\.json$/i.test(filename)) { return "watchman"; }
     if (/\.wdl$/i.test(filename)) { return "wdl"; }
     if (/Workflow Description Language$/i.test(filename)) { return "wdl"; }
@@ -2220,12 +2302,17 @@ function matchIcon(filename) {
     if (/\.cmd$/i.test(filename)) { return "windows"; }
     if (/\.(exe|com|msi)$/i.test(filename)) { return "windows"; }
     if (/\.reg$/i.test(filename)) { return "windows"; }
+    if (/\.xaml$/i.test(filename)) { return "winui"; }
+    if (/\.baml$/i.test(filename)) { return "winui"; }
     if (/\.wixproj$/i.test(filename)) { return "wix"; }
     if (/\.wixobj$/i.test(filename)) { return "wix"; }
     if (/\.wxs$/i.test(filename)) { return "wix"; }
     if (/\.wxi$/i.test(filename)) { return "wix"; }
     if (/\.wxl$/i.test(filename)) { return "wix"; }
     if (/\.wix$/i.test(filename)) { return "wix"; }
+    if (/\.wl$/i.test(filename)) { return "wolfram"; }
+    if (/\.wls$/i.test(filename)) { return "wolfram"; }
+    if (/\.wlt$/i.test(filename)) { return "wolfram"; }
     if (/^workbox-config\.[cm]?js$/i.test(filename)) { return "workbox"; }
     if (/\.wurst$/i.test(filename)) { return "wurst"; }
     if (/WurstLang$/i.test(filename)) { return "wurst"; }
@@ -2261,6 +2348,7 @@ function matchIcon(filename) {
     if (/\.ya?ml$/i.test(filename)) { return "yaml"; }
     if (/\.ya?ml\.mysql$/i.test(filename)) { return "yaml"; }
     if (/\.ya?ml\.sed$/i.test(filename)) { return "yaml"; }
+    if (/^\.yamllint(\.ya?ml)?$/i.test(filename)) { return "yamllint"; }
     if (/^\.yaspellerrc($|\.)|^\.yaspeller\.json$/i.test(filename)) { return "yandex"; }
     if (/\.yang$/i.test(filename)) { return "yang"; }
     if (/\.yara?$/i.test(filename)) { return "yara"; }

@@ -37,9 +37,10 @@ window.onerror = (msg, path, line, col, error) => {
 const path = require("path");
 const fs = require("fs");
 const electron = require("electron");
+const remote = require("@electron/remote");
 const ipc = electron.ipcRenderer;
 
-const settingsDir = electron.remote.app.getPath("userData");
+const settingsDir = remote.app.getPath("userData");
 const themesDir = path.join(settingsDir, "themes");
 const keyboardsDir = path.join(settingsDir, "keyboards");
 const fontsDir = path.join(settingsDir, "fonts");
@@ -53,7 +54,7 @@ window.shortcuts = require(shortcutsFile);
 window.lastWindowState = require(lastWindowStateFile);
 
 // Load CLI parameters
-if (electron.remote.process.argv.includes("--nointro")) {
+if (remote.process.argv.includes("--nointro")) {
     window.settings.nointroOverride = true;
 } else {
     window.settings.nointroOverride = false;
@@ -816,7 +817,7 @@ window.writeFile = (path) => {
     fs.writeFile(path, document.getElementById("fileEdit").value, "utf-8", () => {
         document.getElementById("fedit-status").innerHTML = "<i>File saved.</i>";
     });
-}
+};
 
 window.writeSettingsFile = () => {
     window.settings = {
@@ -839,6 +840,7 @@ window.writeSettingsFile = () => {
         nocursor: (document.getElementById("settingsEditor-nocursor").value === "true"),
         iface: document.getElementById("settingsEditor-iface").value,
         allowWindowed: (document.getElementById("settingsEditor-allowWindowed").value === "true"),
+        forceFullscreen: window.settings.forceFullscreen,
         keepGeometry: (document.getElementById("settingsEditor-keepGeometry").value === "true"),
         excludeThreadsFromToplist: (document.getElementById("settingsEditor-excludeThreadsFromToplist").value === "true"),
         hideDotfiles: (document.getElementById("settingsEditor-hideDotfiles").value === "true"),
@@ -1103,7 +1105,7 @@ document.addEventListener("keydown", e => {
 
 // Fix #265
 window.addEventListener("keyup", e => {
-    if (e.key === "F4" && e.altKey === true) {
+    if (require("os").platform() === "win32" && e.key === "F4" && e.altKey === true) {
         electron.remote.app.quit();
     }
 });

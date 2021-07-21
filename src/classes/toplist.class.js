@@ -12,12 +12,17 @@ class Toplist {
 
         this.parent.append(this._element);
 
+        this.currentlyUpdating = false;
+
         this.updateList();
         this.listUpdater = setInterval(() => {
             this.updateList();
         }, 2000);
     }
     updateList() {
+        if (this.currentlyUpdating) return;
+
+        this.currentlyUpdating = true;
         window.si.processes().then(data => {
             if (window.settings.excludeThreadsFromToplist === true) {
                 data.list = data.list.sort((a, b) => {
@@ -25,8 +30,8 @@ class Toplist {
                 }).filter((e, index, a) => {
                     let i = a.findIndex(x => x.name === e.name);
                     if (i !== -1 && i !== index) {
-                        a[i].pcpu = a[i].pcpu+e.pcpu;
-                        a[i].pmem = a[i].pmem+e.pmem;
+                        a[i].cpu = a[i].cpu+e.cpu;
+                        a[i].mem = a[i].mem+e.mem;
                         return false;
                     }
                     return true;
@@ -34,7 +39,7 @@ class Toplist {
             }
 
             let list = data.list.sort((a, b) => {
-                return ((b.pcpu-a.pcpu)*100 + b.pmem-a.pmem);
+                return ((b.cpu-a.cpu)*100 + b.mem-a.mem);
             }).splice(0, 5);
 
             document.querySelectorAll("#mod_toplist_table > tr").forEach(el => {
@@ -44,10 +49,11 @@ class Toplist {
                 let el = document.createElement("tr");
                 el.innerHTML = `<td>${proc.pid}</td>
                                 <td><strong>${proc.name}</strong></td>
-                                <td>${Math.round(proc.pcpu*10)/10}%</td>
-                                <td>${Math.round(proc.pmem*10)/10}%</td>`;
+                                <td>${Math.round(proc.cpu*10)/10}%</td>
+                                <td>${Math.round(proc.mem*10)/10}%</td>`;
                 document.getElementById("mod_toplist_table").append(el);
             });
+            this.currentlyUpdating = false;
         });
     }
 
@@ -55,6 +61,7 @@ class Toplist {
         let sortKey;
         let ascending = false;
         let removed = false;
+        let currentlyUpdating = false;
 
         function setSortKey(fieldName){
             if (sortKey === fieldName){
@@ -91,6 +98,8 @@ class Toplist {
         }
 
         function updateProcessList() {
+            if (currentlyUpdating) return;
+            currentlyUpdating = true;
             window.si.processes().then(data => {
                 if (window.settings.excludeThreadsFromToplist === true) {
                     data.list = data.list.sort((a, b) => {
@@ -98,8 +107,8 @@ class Toplist {
                     }).filter((e, index, a) => {
                         let i = a.findIndex(x => x.name === e.name);
                         if (i !== -1 && i !== index) {
-                            a[i].pcpu = a[i].pcpu + e.pcpu;
-                            a[i].pmem = a[i].pmem + e.pmem;
+                            a[i].cpu = a[i].cpu + e.cpu;
+                            a[i].mem = a[i].mem + e.mem;
                             return false;
                         }
                         return true;
@@ -110,6 +119,7 @@ class Toplist {
                     proc.runtime = new Date(Date.now() - Date.parse(proc.started));
                 });
 
+                currentlyUpdating = false;
                 let list = data.list.sort((a, b) => {
                     switch (sortKey) {
                         case "PID":
@@ -138,11 +148,11 @@ class Toplist {
                                 return 0;
                             }
                         case "CPU":
-                            if (ascending) return a.pcpu - b.pcpu;
-                            else return b.pcpu - a.pcpu;
+                            if (ascending) return a.cpu - b.cpu;
+                            else return b.cpu - a.cpu;
                         case "Memory":
-                            if (ascending) return a.pmem - b.pmem;
-                            else return b.pmem - a.pmem;
+                            if (ascending) return a.mem - b.mem;
+                            else return b.mem - a.mem;
                         case "State":
                             if (a.state < b.state) return -1;
                             if (a.state > b.state) return 1;
@@ -155,10 +165,10 @@ class Toplist {
                             else return b.runtime - a.runtime;
                         default:
                             // default to the same sorting as the toplist
-                            return ((b.pcpu - a.pcpu) * 100 + b.pmem - a.pmem);
+                            return ((b.cpu - a.cpu) * 100 + b.mem - a.mem);
                     }
                 });
-                
+
                 if (removed) clearInterval(updateInterval);
                 else {
                     document.querySelectorAll("#processList > tr").forEach(el => {
@@ -170,8 +180,8 @@ class Toplist {
                         el.innerHTML = `<td class="pid">${proc.pid}</td>
                             <td class="name">${proc.name}</td>
                             <td class="user">${proc.user}</td>
-                            <td class="cpu">${Math.round(proc.pcpu * 10) / 10}%</td>
-                            <td class="mem">${Math.round(proc.pmem * 10) / 10}%</td>
+                            <td class="cpu">${Math.round(proc.cpu * 10) / 10}%</td>
+                            <td class="mem">${Math.round(proc.mem * 10) / 10}%</td>
                             <td class="state">${proc.state}</td>
                             <td class="started">${proc.started}</td>
                             <td class="runtime">${formatRuntime(proc.runtime)}</td>`;

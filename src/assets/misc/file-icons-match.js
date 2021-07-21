@@ -21,6 +21,7 @@ function matchIcon(filename) {
     if (/^\.cabal$/i.test(filename)) { return "cabal"; }
     if (/\.chef$/.test(filename)) { return "chef"; }
     if (/^\.circleci$/.test(filename)) { return "circleci"; }
+    if (/^cnab$/i.test(filename)) { return "cnab"; }
     if (/^\.cpan$/i.test(filename)) { return "cpan"; }
     if (/^\.cpanplus$/i.test(filename)) { return "cpan"; }
     if (/^cubits?$/i.test(filename)) { return "cubit"; }
@@ -248,7 +249,7 @@ function matchIcon(filename) {
     if (/\.puff$/i.test(filename)) { return "binary"; }
     if (/\.swp$/i.test(filename)) { return "binary"; }
     if (/^\.rnd$/i.test(filename)) { return "binary"; }
-    if (/^(dev-)?requirements\.txt$/.test(filename)) { return "binder"; }
+    if (/^binder[-_]requirements\.(in|txt)$/i.test(filename)) { return "binder"; }
     if (/^\.bintray\.json$/i.test(filename)) { return "bintray"; }
     if (/\.bison$/i.test(filename)) { return "bison"; }
     if (/\.y$/i.test(filename)) { return "bison"; }
@@ -326,6 +327,7 @@ function matchIcon(filename) {
     if (/\.ctp$/i.test(filename)) { return "cakephp"; }
     if (/\.calva-repl$/i.test(filename)) { return "calva"; }
     if (/^Cartfile(\.|$)/.test(filename)) { return "carthage"; }
+    if (/\.casc?$/i.test(filename)) { return "casc"; }
     if (/\.ceylon$/i.test(filename)) { return "ceylon"; }
     if (/^chai\.([jt]sx?|es6?|coffee)$/i.test(filename)) { return "chai"; }
     if (/\.chpl$/i.test(filename)) { return "chapel"; }
@@ -401,6 +403,7 @@ function matchIcon(filename) {
     if (/\.cfml?$/i.test(filename)) { return "cf"; }
     if (/\.(dae|collada)$/i.test(filename)) { return "khronos"; }
     if (/^commitlint\.config\.js$|^\.commitlintrc\.(json|js|ya?ml)$/i.test(filename)) { return "commitlint"; }
+    if (/^\.?cz\.(json|toml|ya?ml)$/i.test(filename)) { return "commitizen"; }
     if (/\.cl$/i.test(filename)) { return "cl"; }
     if (/^c?lisp$/i.test(filename)) { return "cl"; }
     if (/^_?(compass|lemonade)\.scss$/i.test(filename)) { return "compass"; }
@@ -453,9 +456,10 @@ function matchIcon(filename) {
     if (/^settings\.bsp$/i.test(filename)) { return "config"; }
     if (/config|settings|option|pref/i.test(filename)) { return "config"; }
     if (/\.flc$/i.test(filename)) { return "config"; }
+    if (/\.kys$/i.test(filename)) { return "config"; }
     if (/\/(dev[-\w]+|troff)\/([^\/]+\/)*(DESC|Foundry|download|symbolmap)(\.(in|proto|8400))?$/i.test(filename)) { return "config"; }
     if (/[\/\\]fontforge[\/\\]hotkeys[\/\\][^\/\\]+/i.test(filename)) { return "config"; }
-    if (/\.git[\/\\](config|info[\/\\]\w+)$/.test(filename)) { return "config"; }
+    if (/\.git[\/\\](config|info[\/\\][-\w]+)$/.test(filename)) { return "config"; }
     if (/(^|[\/\\])\.fossil-settings\1(?:[^\/\/]+)/.test(filename)) { return "config"; }
     if (/(^|[\/\\])\.ssh[\/\\]config$/.test(filename)) { return "config"; }
     if (/^\/(private\/)?etc\/([^\/]+\/)*[^\/]*\.(cf|conf|ini)(\.default)?$/i.test(filename)) { return "config"; }
@@ -501,6 +505,7 @@ function matchIcon(filename) {
     if (/\.sco$/i.test(filename)) { return "csound"; }
     if (/\.css$/i.test(filename)) { return "css3"; }
     if (/\.less$/i.test(filename)) { return "css3"; }
+    if (/\.tss$/i.test(filename)) { return "css3"; }
     if (/\.feature$/i.test(filename)) { return "cucumber"; }
     if (/gherkin$/i.test(filename)) { return "cucumber"; }
     if (/\.cu$/i.test(filename)) { return "nvidia"; }
@@ -570,6 +575,9 @@ function matchIcon(filename) {
     if (/(^|\/)n?term\/O?tab\.(X|lpr)$/i.test(filename)) { return "database"; }
     if (/\.ssh[\/\\](authorized_keys|known_hosts)$/.test(filename)) { return "database"; }
     if (/^\.icondb\.js$/.test(filename)) { return "database"; }
+    if (/^index\.(bt|db|dir|pag)$/i.test(filename)) { return "database"; }
+    if (/^whatis$/i.test(filename)) { return "database"; }
+    if (/^(language-subtag-registry(\.txt)?|nametable)$/.test(filename)) { return "database"; }
     if (/\.git[\/\\](.*[\/\\])?(HEAD|ORIG_HEAD|packed-refs|logs[\/\\](.+[\/\\])?[^\/\\]+)$/.test(filename)) { return "database"; }
     if (/\.dwl$/i.test(filename)) { return "dataweave"; }
     if (/\.dbf$/i.test(filename)) { return "dbase"; }
@@ -625,10 +633,12 @@ function matchIcon(filename) {
     if (/\.classpath$/i.test(filename)) { return "eclipse"; }
     if (/\.ecl(\.txt)?$/i.test(filename)) { return "eclipse-lang"; }
     if (/\.editorconfig$/i.test(filename)) { return "editorconfig"; }
+    if (/\.ecrc$/i.test(filename)) { return "editorconfig"; }
     if (/\.edge$/i.test(filename)) { return "edge"; }
     if (/\.e$/.test(filename)) { return "eiffel"; }
     if (/\.ejs$/i.test(filename)) { return "ejs"; }
     if (/\.compilerc(\.json)?$/i.test(filename)) { return "electron"; }
+    if (/(^|\.)forge\.config\.js$/i.test(filename)) { return "electron"; }
     if (/\.ex$/i.test(filename)) { return "elixir"; }
     if (/\.(exs|l?eex)$/i.test(filename)) { return "elixir"; }
     if (/^mix\.(exs?|lock)$/i.test(filename)) { return "elixir"; }
@@ -772,6 +782,7 @@ function matchIcon(filename) {
     if (/^\./.test(filename)) { return "gear"; }
     if (/\.dll$/i.test(filename)) { return "gears"; }
     if (/\.xml$/i.test(filename)) { return "code"; }
+    if (/\.xmp$/i.test(filename)) { return "code"; }
     if (/\.rdf$/i.test(filename)) { return "code"; }
     if (/\.config$/i.test(filename)) { return "code"; }
     if (/^_service$/.test(filename)) { return "code"; }
@@ -1281,6 +1292,7 @@ function matchIcon(filename) {
     if (/\.mms$/i.test(filename)) { return "checklist"; }
     if (/\.mmk$/i.test(filename)) { return "checklist"; }
     if (/\.pri$/i.test(filename)) { return "checklist"; }
+    if (/^justfile$/i.test(filename)) { return "checklist"; }
     if (/\.mak?o$/i.test(filename)) { return "mako"; }
     if (/\.(1([bcmstx]|has|in)?|[24568]|3(avl|bsm|cfgadm|in|[cmx]|perl|pm?|qt)?|7(d|fs|i|ipp|m|p)?|9[efps]?|eqn|groff|man|mandoc|mdoc|me|mom|nr?|nroff|roff?|tmac|tmac-u|tr|troff)$/i.test(filename)) { return "manpage"; }
     if (/^(man|mdoc)\.template$/i.test(filename)) { return "manpage"; }
@@ -1687,6 +1699,8 @@ function matchIcon(filename) {
     if (/\.ps$/i.test(filename)) { return "postscript"; }
     if (/\.eps$/i.test(filename)) { return "postscript"; }
     if (/\.pfa$/i.test(filename)) { return "postscript"; }
+    if (/\.bez$/i.test(filename)) { return "postscript"; }
+    if (/^fontinfo$/i.test(filename)) { return "postscript"; }
     if (/\.a[fm]m$/i.test(filename)) { return "postscript"; }
     if (/\.eps[fi]$/i.test(filename)) { return "postscript"; }
     if (/^Fontmap$/.test(filename)) { return "postscript"; }
@@ -1728,7 +1742,7 @@ function matchIcon(filename) {
     if (/\.pb$/i.test(filename)) { return "purebasic"; }
     if (/\.pbi$/i.test(filename)) { return "purebasic"; }
     if (/\.purs$/i.test(filename)) { return "purescript"; }
-    if (/^requirements\.in$/i.test(filename)) { return "pypi"; }
+    if (/^((dev|docs?|tests?)[-_]requirements|requirements([-_](dev|docs?|tests?))?)\.(in|txt)$/i.test(filename)) { return "pypi"; }
     if (/\.arr$/i.test(filename)) { return "pyret"; }
     if (/^pytest\.ini$/.test(filename)) { return "pytest"; }
     if (/\.py$/i.test(filename)) { return "python"; }
@@ -1890,6 +1904,7 @@ function matchIcon(filename) {
     if (/\.scm$/i.test(filename)) { return "scheme"; }
     if (/\.sld$/i.test(filename)) { return "scheme"; }
     if (/\.sps$/i.test(filename)) { return "scheme"; }
+    if (/\.xtm$/i.test(filename)) { return "scheme"; }
     if (/\.scilla$/i.test(filename)) { return "scilla"; }
     if (/\.sci$/i.test(filename)) { return "scilab"; }
     if (/\.sce$/i.test(filename)) { return "scilab"; }
@@ -2242,6 +2257,7 @@ function matchIcon(filename) {
     if (/\.vhdx$/i.test(filename)) { return "virtualbox"; }
     if (/\.vbox_version$/i.test(filename)) { return "virtualbox"; }
     if (/\.vbox(-prev)?$/i.test(filename)) { return "virtualbox"; }
+    if (/^vite\.config\.[jt]s$/i.test(filename)) { return "vite"; }
     if (/\.(vba?|fr[mx]|bas)$/i.test(filename)) { return "vs"; }
     if (/\.vbhtml$/i.test(filename)) { return "vs"; }
     if (/\.vbs$/i.test(filename)) { return "vs"; }

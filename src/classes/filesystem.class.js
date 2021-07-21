@@ -309,7 +309,7 @@ class FilesystemDisplay {
                 let hidden = e.hidden ? " hidden" : "";
 
                 let cmdPrefix = `if (window.keyboard.container.dataset.isCtrlOn == "true") {
-                                electron.shell.openItem(fsDisp.cwd[${blockIndex}].path);
+                                electron.shell.openPath(fsDisp.cwd[${blockIndex}].path);
                                 electronWin.minimize();
                             } else if (window.keyboard.container.dataset.isShiftOn == "true") {
                                 window.term[window.currentTerm].write("\\""+fsDisp.cwd[${blockIndex}].path+"\\"");
@@ -347,7 +347,7 @@ class FilesystemDisplay {
                 }
 
                 if (e.type === "file") {
-                    cmd = `window.fsDisp.openFile(${blockIndex})`
+                    cmd = `window.fsDisp.openFile(${blockIndex})`;
                 }
 
                 if (e.type === "system") {
@@ -554,7 +554,7 @@ class FilesystemDisplay {
                 name = block.name;
             }
 
-            let mime = require("mime-types")
+            let mime = require("mime-types");
 
             block.path = block.path.replace(/\\/g, "/");
 
@@ -632,7 +632,7 @@ class FilesystemDisplay {
                    break;
                 }
             }
-        }
+        };
 
         this.openMedia = (name, path, type) => {
             let block, html;
